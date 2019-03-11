@@ -1,0 +1,83 @@
+//5-13
+//文件1,friend.h
+#pragma once
+#include <iostream>
+using namespace std;
+class X;
+class Y {
+public:
+	void g(X *x);
+};
+class X {
+private:
+	int i;
+public:
+	X() {
+		i = 0;
+	}
+	friend void h(X *x);//h是X的友元函数
+	friend void Y::g(X *x);//Y里面的g是X的友元函数
+	friend class Z;//Z是X的友元对象
+};
+class Z {
+public:
+	void f(X *x);
+};
+//文件2,002.cpp
+#include "stdafx.h"
+#include "friends.h"
+#include <iostream>
+void Y::g(X *x) {
+	x->i++;
+}
+void Z::f(X *x) {
+	x->i += 5;
+}
+void h(X *x) {
+	x->i += 10;
+}
+//文件3,main.cpp
+#include <iostream>
+#include "friends.h"
+using namespace std;
+int main()
+{
+	X x;
+	Y y;
+	Z z;
+	y.g(&x);
+	z.f(&x);
+	h(&x);
+	getchar();
+	return 0;
+}
+
+//5-14
+#include <iostream>
+using namespace std;
+class Car;
+class Boat {
+private:
+	float weight=20;
+public:
+	friend float getTotalWeight(Boat &boat, Car &car);
+};
+class Car {
+private:
+	float weight=100;
+public:
+	friend float getTotalWeight(Boat &boat, Car &car);
+};
+//计算boat和car的重量和
+float getTotalWeight(Boat &boat,Car &car) {
+	return (boat.weight + car.weight);
+}
+int main()
+{
+	Boat boat;
+	Car car;
+	cout << getTotalWeight(boat, car) << endl;
+	return 0;
+}
+
+
