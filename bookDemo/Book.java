@@ -9,12 +9,14 @@ public class Book {
 	private  String name;
 	private  String id;//书本在库里的序号//每一个书名对应一个序号
 	private String seriesNum;//实际的序列号
+	private String num;//内部编号
 	private int count;//库存
 	static private int bookSumCount=0;//书的总量
 	
 	
 	public Book() {
 		super();
+		
 	}
 	public Book(String name, String seriesNum, int count) {
 		super();
@@ -47,6 +49,12 @@ public class Book {
 	}
 	public void setSeriesNum(String seriesNum) {
 		this.seriesNum = seriesNum;
+	}
+	public String getNum() {
+		return num;
+	}
+	public void setNum(String num) {
+		this.num = num;
 	}
 	
 }
