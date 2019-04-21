@@ -5,28 +5,28 @@
 #include "B3.h"
 using namespace std;
 
-//ÊµÑé5
+//å®éªŒ5
 int main() {
 	B1 b1;
 	B2 b2;
 	B3 b3;
-	//¹«ÓĞ¼Ì³Ğ
-	b1.seta(1,2,3);//ÉèÖÃÀ´×Ô¸¸ÀàµÄ
-	b1.setb1(4,5,6);//ÉèÖÃ±¾ÉíµÄ
-	cout<<b1.ai<<endl;//¿ÉÒÔ·ÃÎÊ
+	//å…¬æœ‰ç»§æ‰¿
+	b1.seta(1,2,3);//è®¾ç½®æ¥è‡ªçˆ¶ç±»çš„
+	b1.setb1(4,5,6);//è®¾ç½®æœ¬èº«çš„
+	cout<<"ç›´æ¥è®¿é—®ï¼š"<<b1.ai<<endl;//å¯ä»¥è®¿é—®
 	cout << "b1a i:" << b1.getAi()<< " j:" << b1.getAj() << " k:" << b1.getAk() << endl;
 	cout << "b1  i:" << b1.getBi() << " j:" << b1.getBj() << " k:" << b1.getBk() << endl;
 
-	//Ë½ÓĞ¼Ì³Ğ
-	//b2.seta(7, 8, 9);//²»¿É·ÃÎÊ£¬ÒÑÊÇprivate ĞÔÖÊ
+	//ç§æœ‰ç»§æ‰¿
+	//b2.seta(7, 8, 9);//ä¸å¯è®¿é—®ï¼Œå·²æ˜¯private æ€§è´¨
 	b2.setAi(7);
 	b2.setAj(8);
 	b2.setAk(9);
 	b2.setb2(10,11,12);
 	cout<<"b2a i:"<<b2.getAi()<<" j:"<<b2.getAj()<<" k:"<<b2.getAk()<<endl;
 	cout<<"b2  i:"<<b2.getBi()<<" j:"<<b2.getBj()<<" k:"<<b2.getBk()<<endl;
-	//±£»¤¼Ì³Ğ
-	//b3.seta(13,14,15);//²»¿É·ÃÎÊ£¬ÒÑÊÇprotected ÀàĞÍ
+	//ä¿æŠ¤ç»§æ‰¿
+	//b3.seta(13,14,15);//ä¸å¯è®¿é—®ï¼Œå·²æ˜¯protected ç±»å‹
 	b3.setAi(13);
 	b3.setAj(14);
 	b3.setAk(15);
