@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1556356481 source:/home/pi/code/C++_codeBlock/test6/test6/main.cpp
+	<iostream>
+	<C.h>
+
+1556355652 /home/pi/code/C++_codeBlock/test6/test6/include/A.h
+
+1556355958 source:/home/pi/code/C++_codeBlock/test6/test6/src/B.cpp
+	"B.h"
+	<iostream>
+
+1556356640 /home/pi/code/C++_codeBlock/test6/test6/include/B.h
+
+1556355928 source:/home/pi/code/C++_codeBlock/test6/test6/src/A.cpp
+	"A.h"
+	<iostream>
+
+1556356728 source:/home/pi/code/C++_codeBlock/test6/test6/src/C.cpp
+	"C.h"
+	<iostream>
+
+1556356754 /home/pi/code/C++_codeBlock/test6/test6/include/C.h
+	<A.h>
+	<B.h>
+
