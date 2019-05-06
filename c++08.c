@@ -28,7 +28,7 @@ int main() {
 	Dog dog;
 	dog.speak();
 }
-//½á¹ûÊÇ£º Dog speak
+//ç»“æžœæ˜¯ï¼š Dog speak
 
 
 //-----------------------------------8-6
@@ -71,12 +71,13 @@ private:
 int main() {
 	Rectangle r1;
 	Cirle c1;
-	cout << "¾ØÐÎÃæ»ý£º" << r1.getArea()<<" ¾ØÐÎÖÜ³¤£º"<<r1.getPerim()<< endl;
-	cout << "Ô²Ãæ»ý£º" <<c1.getArea() << " Ô²ÖÜ³¤£º" << c1.getPerim() << endl;
+	cout << "çŸ©å½¢é¢ç§¯ï¼š" << r1.getArea()<<" çŸ©å½¢å‘¨é•¿ï¼š"<<r1.getPerim()<< endl;
+	cout << "åœ†é¢ç§¯ï¼š" <<c1.getArea() << " åœ†å‘¨é•¿ï¼š" << c1.getPerim() << endl;
 }
-//ÔËÐÐ½á¹û
-//¾ØÐÎÃæ»ý£º16 ¾ØÐÎÖÜ³¤£º16
-//Ô²Ãæ»ý£º78.5 Ô²ÖÜ³¤£º31.4
+//è¿è¡Œç»“æžœ
+//çŸ©å½¢é¢ç§¯ï¼š16 çŸ©å½¢å‘¨é•¿ï¼š16
+//åœ†é¢ç§¯ï¼š78.5 åœ†å‘¨é•¿ï¼š31.4
+
 
 
 //8-7
@@ -89,33 +90,49 @@ class Point
 public:
 	Point() { x = 5; y = 5; }
 	~Point() {}
-	Point& operator++() {//Ç°ÖÃ
+	Point& operator++() {//å‰ç½®
 		x++;
 		y++;
 		return *this;
-	};
-	Point operator++(int) {//ºóÖÃ
+	}
+	Point& operator--() {//å‰ç½®
+		x--;
+		y--;
+		return *this;
+	}
+	Point operator++(int) {//åŽç½®
 		Point old = *this;
 		++(*this);
 		return old;
 	}
+	Point operator--(int) {//åŽç½®
+		Point old = *this;
+		--(*this);
+		return old;
+	}
 	int getX() { return x; }
 	int getY() { return y; }
+
 private:
 	int x;
 	int y;
 };
-
-
-
 int main() {
 	Point p1;
-	cout << "ÆðÊ¼ X: " << p1.getX() << " Y:" << p1.getX() << endl;
-	
-	++p1;
-	cout << "Ç°ÖÃ X: " << p1.getX() << " Y:" << p1.getX() << endl;
-	cout << "ºóÖÃ X: " << p1++.getX() << " Y:" << p1++.getX() << endl;
+	cout << "èµ·å§‹ X: " << p1.getX() << " Y:" << p1.getY() << endl;
+	cout << "å‰ç½® X: " <<(++p1).getX() << " Y:" <<(++p1).getY() << endl;
+	cout << "åŽç½® X: " << p1++.getX() << " Y:" << p1++.getY() << endl;
+	Point p2;
+	cout << "èµ·å§‹ X: " << p2.getX() << " Y:" << p2.getY() << endl;
+	cout << "å‰ç½® X: " <<(--p2).getX() << " Y:" <<(--p2).getY() << endl;
+	cout << "åŽç½® X: " << p2--.getX() << " Y:" << p2--.getY() << endl;
 }
-
+//ç»“æžœï¼š
+//èµ·å§‹  X:5 Y:5
+//å‰ç½®  X:6 Y:7
+//åŽç½®  X:7 Y:8
+//èµ·å§‹  X:5 Y:5
+//å‰ç½®  X:4 Y:3
+//åŽç½®  X:3 Y:2
 
 
