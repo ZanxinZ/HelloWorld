@@ -136,3 +136,31 @@ int main() {
 //后置  X:3 Y:2
 
 
+//8-8
+#include <iostream>
+using namespace std;
+class BaseClass
+{
+public:
+	virtual void fn1(){cout<<"基类fn1"<<endl;}
+    void fn2(){cout<<"基类fn2"<<endl;};
+
+};
+class DerivedClass{
+public:
+    void fn1(){cout<<"派生类fn1"<<endl;}
+    void fn2(){cout<<"派生类fn2"<<endl;}
+};
+int main() {
+	DerivedClass dev;
+	//BaseClass *b;
+	DerivedClass *d;
+	//b=&dev;
+	d=&dev;
+	d->fn1();
+	d->fn2();
+
+}
+
+
+
