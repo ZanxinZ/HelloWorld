@@ -137,30 +137,50 @@ int main() {
 
 
 //8-8
+
 #include <iostream>
+
 using namespace std;
+
 class BaseClass
+
 {
+
 public:
-	virtual void fn1(){cout<<"基类fn1"<<endl;}
-    void fn2(){cout<<"基类fn2"<<endl;};
+
+	virtual void fn1() { cout << "基类fn1" << endl; }
+
+	void fn2() { cout << "基类fn2" << endl; };
+
+
 
 };
-class DerivedClass{
+
+class DerivedClass :public BaseClass{
+
 public:
-    void fn1(){cout<<"派生类fn1"<<endl;}
-    void fn2(){cout<<"派生类fn2"<<endl;}
+
+	void fn1() { cout << "派生类fn1" << endl; }
+
+	void fn2() { cout << "派生类fn2" << endl; }
+
 };
+
 int main() {
 	DerivedClass dev;
-	//BaseClass *b;
 	DerivedClass *d;
-	//b=&dev;
-	d=&dev;
+	BaseClass *b=&dev;
+	b->fn1();
+	b->fn2();
+	d = &dev;
 	d->fn1();
 	d->fn2();
-
 }
-
+//输出结果：
+//派生类fn1
+//基类fn2
+//派生类fn1
+//派生类fn2
+//结论：通过基类指针访问派生类对象时，优先访问基类虚成员
 
 
